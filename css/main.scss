@@ -1,0 +1,120 @@
+@import '_variables.scss';
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 42px;
+}
+
+.card {
+  width: 100%;
+  max-width: 920px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 8px;
+  overflow: hidden;
+
+  &__item {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &_img {
+      margin-bottom: 35px;
+    }
+
+    &_title {
+      color: $very-light-gray;
+      font-family: $shoulders;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    &_desc {
+      color: $transparent-white;
+      font-family: Lexend Deca;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px;
+    }
+
+    &_btn {
+      width: 146px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 11px 0;
+      margin-top: auto;
+      text-decoration: none;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 25px;
+      background: $very-light-gray;
+      border: 2px solid transparent;
+      border-radius: 25px;
+      transition: all .2s ease;
+
+      &:hover {
+        background: transparent;
+        border-color: #fff;
+        color: white !important;
+      }
+    }
+  }
+}
+
+.card__item:first-child {
+  background: $bright-orange;
+
+  .card__item_btn {
+    color: $bright-orange;
+  }
+}
+
+.card__item:nth-child(2) {
+  background: $dark-cyan;
+
+  .card__item_btn {
+    color: $dark-cyan;
+  }
+}
+
+.card__item:last-child {
+  background: $very-dark-cyan;
+
+  .card__item_btn {
+    color: $very-dark-cyan;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .main {
+    padding: 88px 15px;
+  }
+
+  .card {
+    max-width: 100%;
+    height: auto;
+    grid-template-columns: repeat(1, 1fr);
+
+    &__item {
+      &_desc {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
